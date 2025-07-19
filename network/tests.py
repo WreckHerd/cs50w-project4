@@ -7,6 +7,7 @@ class UserTestCase(TestCase):
     def setUp(self):
         u1 = User.objects.create_user("foo", "foo@g.com", "")
         u2 = User.objects.create_user("bar", "bar@g.com", "")
+        u3 = User.objects.create_user("baz", "baz@g.com", "")
         
     def test_email(self):
         u = User.objects.get(username="foo")
