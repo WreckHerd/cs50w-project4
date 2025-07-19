@@ -18,3 +18,7 @@ class UserTestCase(TestCase):
         response = c.get("/login")
         self.assertEqual(response.status_code, 200)
 
+    def test_register(self):
+        c = Client()
+        response = c.post("/register", {"username": "poo", "email": "poo@g.com", "password": "", "confirmation":""})
+        self.assertEqual(response.status_code, 302)
